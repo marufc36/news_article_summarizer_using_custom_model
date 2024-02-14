@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Article Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        
+        body {
+            background-image: url('news.jpeg'); /* Replace 'background-image.jpg' with the path to your image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8); /* Adding a semi-transparent white background to the container */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>News Article Summarizer</h1>
+        <form id="summarizeForm" method="post" action="/">
+            <label for="input_text">Input Text:</label><br>
+            <textarea id="input_text" name="input_text" rows="10" cols="50" placeholder="Enter your article here..."></textarea><br>
+            <input id="submitBtn" type="submit" value="Summarize">
+            <span id="loadingMsg" style="display: none;">Generating summary...</span>
+        </form>
+        {% if summary %}
+            <div class="summary">
+                <h2>Summary:</h2>
+                <p>{{ summary }}</p>
+            </div>
+        {% endif %}
+    </div>
+    <script>
+        // Add JavaScript interactivity here
+        document.getElementById("summarizeForm").addEventListener("submit", function() {
+            document.getElementById("submitBtn").disabled = true;
+            document.getElementById("loadingMsg").style.display = "inline";
+        });
+    </script>
+</body>
+</html>

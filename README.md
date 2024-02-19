@@ -11,8 +11,9 @@ A NLP based summarizer which can summarize news article. Using T5TokenizerFast I
 - [Dependencies](#dependencies)
 - [Data Set](#data-set)
 - [Data Modelling](#data-modelling)
+- [Inference](#inference)
 - [HuggingFace Deployment](#huggingface-deployment)
-- [FlaskApp](flaskapp)
+- [FlaskApp](#flaskapp)
 
 
 
@@ -46,6 +47,10 @@ Colab Notebook
    ```bash
 https://drive.google.com/file/d/1qbCqMXjv5aqyfkJ6ntQMfGwYoXXATqWM/view?usp=sharing
 ```
+
+## Inference
+
+I have inferenced the using a gradio app. I have to load the best checkpoint using NewsSummaryModel. I have created model.py module which includes NewsSummaryModel.
 
 
 ## HuggingFace Deployment
